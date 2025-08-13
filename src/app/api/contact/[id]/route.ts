@@ -3,11 +3,16 @@ import connectDB from "@/app/lib/db";
 import Contact from "@/app/models/contact";
 
 // Update contact
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(
+  req: NextRequest,
+  context: { params: Promise<{ id: string }> } // 👈 fix: params is now Promise-based
+) {
   try {
     await connectDB();
     const body = await req.json();
-    const contact = await Contact.findByIdAndUpdate(params.id, body, { new: true });
+
+    const { id } = await context.params; // 👈 await to unwrap
+    const contact = await Contact.findByIdAndUpdate(id, body, { new: true });
 
     if (!contact) {
       return NextResponse.json({ message: "Contact not found" }, { status: 404 });
@@ -20,10 +25,15 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 // Delete contact
-export async function DELETE(_: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(
+  _req: NextRequest,
+  context: { params: Promise<{ id: string }> }
+) {
   try {
     await connectDB();
-    const contact = await Contact.findByIdAndDelete(params.id);
+
+    const { id } = await context.params;
+    const contact = await Contact.findByIdAndDelete(id);
 
     if (!contact) {
       return NextResponse.json({ message: "Contact not found" }, { status: 404 });
