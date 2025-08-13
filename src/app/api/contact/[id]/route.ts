@@ -1,18 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "@/app/lib/db";
 import Contact from "@/app/models/contact";
 
 // Update contact
 export async function PUT(
   req: NextRequest,
-  context: { params: Promise<{ id: string }> } // 👈 fix: params is now Promise-based
+  context: { params: { id: string } } // ✅ plain object, no Promise here
 ) {
-  try {
-    await connectDB();
-    const body = await req.json();
+  // Prevent build crash if env var missing
+  if (!process.env.MONGODB_URI) {
+    return NextResponse.json(
+      { message: "Database connection not configured" },
+      { status: 500 }
+    );
+  }
 
-    const { id } = await context.params; // 👈 await to unwrap
-    const contact = await Contact.findByIdAndUpdate(id, body, { new: true });
+  // Lazy import DB connection so it's only loaded when route runs
+  const connectDB = (await import("@/app/lib/db")).default;
+  await connectDB();
+
+  try {
+    const body = await req.json();
+    const contact = await Contact.findByIdAndUpdate(context.params.id, body, {
+      new: true,
+    });
 
     if (!contact) {
       return NextResponse.json({ message: "Contact not found" }, { status: 404 });
@@ -27,13 +37,20 @@ export async function PUT(
 // Delete contact
 export async function DELETE(
   _req: NextRequest,
-  context: { params: Promise<{ id: string }> }
+  context: { params: { id: string } }
 ) {
-  try {
-    await connectDB();
+  if (!process.env.MONGODB_URI) {
+    return NextResponse.json(
+      { message: "Database connection not configured" },
+      { status: 500 }
+    );
+  }
 
-    const { id } = await context.params;
-    const contact = await Contact.findByIdAndDelete(id);
+  const connectDB = (await import("@/app/lib/db")).default;
+  await connectDB();
+
+  try {
+    const contact = await Contact.findByIdAndDelete(context.params.id);
 
     if (!contact) {
       return NextResponse.json({ message: "Contact not found" }, { status: 404 });
