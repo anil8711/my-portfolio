@@ -255,8 +255,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section - Luxurious Ayurvedic Heritage */}
-      <motion.section
+     
+      {/* Products Section - Luxurious Ayurvedic Products */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false }}
+        id="products"
+        className="max-w-7xl mx-auto bg-white text-center py-12 md:py-20 px-4 md:px-6"
+      >
+        <Card/>
+      </motion.div>
+
+      {/* Gallery Section Placeholder */}
+      <section id="gallery" className="py-12 md:py-16 bg-gradient-to-br from-emerald-100 to-amber-50">
+        {/* <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-900 mb-2 md:mb-4">Our Gallery</h2>
+          <p className="text-center text-emerald-600 mb-8 md:mb-12 text-base md:text-lg">Discover the essence of Ayurvedic luxury</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <div key={item} className="relative group overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src={`/images/ASAS.avif`}
+                  alt={`Gallery image ${item}`}
+                  width={400}
+                  height={300}
+                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                  <span className="text-white font-semibold">Ayurvedic Wellness</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div> */}
+        <Banners1 />
+      </section>
+       {/* About Section - Luxurious Ayurvedic Heritage */}
+       <motion.section
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -359,44 +396,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </motion.section> 
 
-      {/* Products Section - Luxurious Ayurvedic Products */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: false }}
-        id="products"
-        className="max-w-7xl mx-auto bg-white text-center py-12 md:py-20 px-4 md:px-6"
-      >
-        <Card/>
-      </motion.div>
-
-      {/* Gallery Section Placeholder */}
-      <section id="gallery" className="py-12 md:py-16 bg-gradient-to-br from-emerald-100 to-amber-50">
-        {/* <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-900 mb-2 md:mb-4">Our Gallery</h2>
-          <p className="text-center text-emerald-600 mb-8 md:mb-12 text-base md:text-lg">Discover the essence of Ayurvedic luxury</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="relative group overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src={`/images/ASAS.avif`}
-                  alt={`Gallery image ${item}`}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                  <span className="text-white font-semibold">Ayurvedic Wellness</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
-        <Banners1 />
-      </section>
 
       {/* Contact Section - Luxurious Consultation */}
       <section id="contact" className="py-12 md:py-20 bg-gradient-to-br from-emerald-900 to-emerald-800">
@@ -501,7 +502,7 @@ export default function Home() {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full p-2 md:p-3 border-2 bg-white/10 text-white border-amber-400/50 rounded-xl focus:outline-none focus:border-amber-400 placeholder:text-emerald-200 text-sm md:text-base"
+                    className="w-full p-2 md:p-3 border- bg-white/10 text-white border-amber-400/50 rounded-xl focus:outline-none focus:border-amber-400 placeholder:text-emerald-200 text-sm md:text-base"
                   />
                   <input
                     type="email"
@@ -523,7 +524,7 @@ export default function Home() {
                 />
 
                 <textarea
-                  placeholder="tell me our address"
+                  placeholder="tell me our address and Mobile N0."
                   rows={4}
                   required
                   value={message}

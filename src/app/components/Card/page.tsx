@@ -75,19 +75,11 @@ export default function ProductGrid() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-block p-4 bg-white rounded-2xl shadow-lg mb-4">
-            <svg className="w-12 h-12 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7L9 18l-5-5" />
-            </svg>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-800 via-emerald-600 to-amber-600 bg-clip-text text-transparent">
-            Our Premium Collection
-          </h1>
-          <p className="text-gray-600 mt-2">Discover our range of authentic Ayurvedic products</p>
+        
         </motion.div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,7 +119,7 @@ export default function ProductGrid() {
             <p className="text-sm opacity-90">Active</p>
             <p className="text-3xl font-bold">{products.filter(p => p.isActive).length}</p>
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

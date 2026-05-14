@@ -1,146 +1,169 @@
+import Image from "next/image";
+
 export default function RiyanshDaiboGJuiceBanner() {
   const benefits = [
-    "डायबिटीज के मरीजों के लिए अत्यंत लाभदायक गुणकारी",
-    "टाइप 2 डायबिटीज मरीजों के लिए बेहद",
-    "रक्त में शुगर लेवल को कम करता है।",
-    "शरीर में इंसुलिन उत्पादन को नियंत्रित करता है।",
-    "कोलेस्ट्रॉल लेवल को कम करता है",
-    "रोग प्रतिरोधक क्षमता को बढ़ाता है।",
+    "डायबिटीज के मरीजों के लिए अत्यंत लाभदायक",
+    "टाइप 2 डायबिटीज में लाभकारी",
+    "रक्त में शुगर लेवल नियंत्रित करे",
+    "इंसुलिन उत्पादन को संतुलित करे",
+    "कोलेस्ट्रॉल लेवल कम करने में सहायक",
+    "रोग प्रतिरोधक क्षमता बढ़ाए",
     "रक्त शोधक",
-    "मीठा खाने की तलब को कम करता है।",
-    "पाचन शक्ति को बढ़ाता है",
-    "वजन को नियंत्रित करता है।",
+    "मीठा खाने की तलब कम करे",
+    "पाचन शक्ति बढ़ाए",
+    "वजन नियंत्रित रखने में सहायक",
   ];
 
   const directions = [
-    "अच्छी तरह हिलाएं और ढक्कन खोलें",
-    "पानी में 30 मिली रस डालें",
+    "अच्छी तरह हिलाएं",
+    "30ml रस पानी में मिलाएं",
     "चम्मच से अच्छी तरह मिलाएं",
-    "आपका जूस पीने के लिए तैयार है",
-    "रोजाना खाली पेट दो बार पिएं",
+    "जूस पीने के लिए तैयार है",
+    "खाली पेट दिन में दो बार सेवन करें",
   ];
 
   return (
-    <div className="w-full bg-[#e9e9e9] overflow-hidden border border-gray-300">
-      {/* Header */}
-      <div className="bg-[#1f56a8] py-4 px-6 md:px-12">
-        <h1 className="text-white text-3xl md:text-6xl font-extrabold tracking-wide text-center uppercase font-serif">
-          RIYANSH DAIBO-G JUICE
-        </h1>
-      </div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#f7f4e8] via-[#efe6cb] to-[#f9f6ed] py-12 px-4 md:px-8">
 
-      {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 md:p-10 items-start">
-        {/* Left Section */}
-        <div>
-          <div className="inline-block bg-[#a7c520] text-black px-6 py-2 rounded-full font-bold text-2xl mb-5 shadow-md">
-            उपयोगिताएं -
-          </div>
+      {/* Background Blur */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-green-200/30 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-200/30 blur-3xl rounded-full"></div>
 
-          <ul className="space-y-2 text-[18px] md:text-[21px] font-semibold text-gray-900 leading-relaxed">
-            {benefits.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-red-600 text-2xl leading-none">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+      <div className="max-w-7xl mx-auto rounded-[35px] overflow-hidden border border-[#dccb9e] bg-white/70 backdrop-blur-xl shadow-[0_15px_60px_rgba(0,0,0,0.12)]">
 
-          {/* Certified Badge */}
-          <div className="mt-10 flex justify-center">
-            <div className="flex flex-col items-center">
-              <div className="w-36 h-36 rounded-full border-[10px] border-yellow-400 bg-gradient-to-br from-yellow-100 to-white shadow-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-green-700 text-sm font-bold uppercase tracking-wide">
-                    AYUSH
-                  </div>
-                  <div className="text-xs text-gray-700 mt-1">
-                    Premium
-                  </div>
-                </div>
-              </div>
-              <p className="mt-3 text-3xl font-serif text-[#2b2b87] font-semibold">
-                Certified
-              </p>
-            </div>
-          </div>
+        {/* Header */}
+        <div className="bg-gradient-to-r from-[#0f5132] via-[#176b47] to-[#0f5132] py-6 px-6 text-center relative">
+
+          <p className="text-[#f6d78b] uppercase tracking-[4px] text-xs md:text-sm font-semibold mb-2">
+            Ayurvedic Wellness Juice
+          </p>
+
+          <h1 className="text-white text-3xl md:text-6xl font-extrabold tracking-wide">
+            RIYANSH DAIBO-G JUICE
+          </h1>
+
+          <p className="text-[#f5e7b2] mt-2 text-sm md:text-lg">
+            Premium Ayurvedic Diabetes Care Formula
+          </p>
         </div>
 
-        {/* Center Section */}
-        <div className="flex flex-col items-center justify-start pt-4">
-          <h2 className="text-red-600 text-3xl md:text-5xl font-extrabold text-center leading-tight">
-            प्राकृतिक एवं अद्भुत गुणकारी
-            <br />
-            17 जड़ी बूटियों से निर्मित
-          </h2>
+        {/* Main Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-5 md:p-10 items-center">
 
-          {/* Directions Card */}
-          <div className="mt-10 w-full max-w-md rounded-[28px] overflow-hidden border-2 border-fuchsia-600 bg-white shadow-xl">
-            <div className="bg-fuchsia-700 text-white text-3xl font-bold px-6 py-3">
-              Direction For Use
+          {/* Left */}
+          <div>
+
+            <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-[#c8a85f] to-[#e8d39c] shadow-lg mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-[#2b2b2b]">
+                उपयोगिताएं
+              </h2>
             </div>
 
-            <div className="p-6 space-y-4">
-              {directions.map((item, index) => (
-                <div key={index} className="flex items-start gap-4 text-[18px] md:text-[20px] font-semibold text-gray-800">
-                  <div className="w-8 h-8 rounded-full bg-yellow-100 border border-gray-300 flex items-center justify-center text-sm font-bold shrink-0">
-                    {index + 1}
-                  </div>
-                  <p>{item}</p>
-                </div>
+            <ul className="space-y-3">
+              {benefits.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-[#ead9b4] shadow-sm hover:shadow-md transition"
+                >
+                  <span className="text-[#176b47] text-lg mt-0.5">
+                    ✦
+                  </span>
+
+                  <span className="text-[14px] md:text-[16px] font-medium text-[#2f2f2f] leading-relaxed">
+                    {item}
+                  </span>
+                </li>
               ))}
+            </ul>
+
+            {/* AYUSH Badge */}
+            <div className="mt-8 flex justify-center">
+              <div className="flex flex-col items-center">
+
+                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#f6e4aa] via-[#d9b466] to-[#b98c2f] p-2 shadow-2xl">
+
+                  <div className="w-full h-full rounded-full bg-white border-[5px] border-[#f0d38c] flex flex-col items-center justify-center">
+
+                    <span className="text-[#176b47] text-[10px] tracking-[3px] font-bold uppercase">
+                      AYUSH
+                    </span>
+
+                    <span className="text-[#8a5a14] text-lg font-extrabold">
+                      Certified
+                    </span>
+
+                    <span className="text-[9px] text-gray-500">
+                      Premium
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Section */}
-        <div className="flex justify-center lg:justify-end items-end">
-          <div className="relative flex items-end gap-4">
-            {/* Box */}
-            <div className="w-44 h-[420px] bg-gradient-to-b from-lime-200 to-green-100 border-4 border-yellow-400 rounded-md shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 bg-yellow-400 h-8"></div>
+          {/* Center */}
+          <div className="flex flex-col items-center text-center">
 
-              <div className="flex flex-col items-center justify-center h-full p-4 text-center">
-                <div className="w-20 h-20 bg-white rounded-full border-4 border-green-500 mb-4"></div>
+            <div className="bg-white/70 backdrop-blur-xl rounded-[28px] border border-[#ead9b4] shadow-2xl p-6 w-full">
 
-                <div className="text-green-700 font-bold text-xl uppercase">
-                  DAIBO-G
+              <h2 className="text-2xl md:text-4xl font-extrabold leading-tight text-[#0f5132]">
+                प्राकृतिक एवं गुणकारी
+              </h2>
+
+              <p className="mt-3 text-sm md:text-base text-[#5f5f5f] leading-relaxed">
+                17 आयुर्वेदिक जड़ी-बूटियों से निर्मित
+                शक्तिशाली हेल्थ सपोर्ट जूस
+              </p>
+
+              {/* Direction Box */}
+              <div className="mt-6 rounded-3xl overflow-hidden border border-[#d8c59d] bg-gradient-to-br from-[#fff8e8] to-[#f4e6c4] shadow-lg">
+
+                <div className="bg-gradient-to-r from-[#8a5a14] to-[#c69a3a] text-white py-3 px-5 text-xl font-bold">
+                  Direction For Use
                 </div>
 
-                <div className="text-red-500 text-lg font-bold mt-1">
-                  RAS
-                </div>
+                <div className="p-5 space-y-4">
+                  {directions.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3"
+                    >
+                      <div className="w-7 h-7 rounded-full bg-white border border-[#d8c59d] flex items-center justify-center text-xs font-bold text-[#176b47] shrink-0">
+                        {index + 1}
+                      </div>
 
-                <div className="mt-6 space-y-2">
-                  <div className="w-12 h-12 rounded-full bg-green-300 mx-auto"></div>
-                  <div className="w-12 h-12 rounded-full bg-yellow-300 mx-auto"></div>
-                  <div className="w-12 h-12 rounded-full bg-lime-400 mx-auto"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottle */}
-            <div className="w-32 h-[380px] bg-gradient-to-b from-green-700 to-green-900 rounded-[40px] relative shadow-2xl border-4 border-green-800">
-              {/* Cap */}
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-12 bg-green-700 rounded-t-xl border-4 border-green-900"></div>
-
-              {/* Label */}
-              <div className="absolute top-20 left-1/2 -translate-x-1/2 w-24 h-48 bg-white rounded-2xl flex flex-col items-center justify-center p-2 shadow-lg">
-                <div className="w-14 h-14 rounded-full border-4 border-green-500"></div>
-                <div className="text-red-600 font-extrabold text-lg mt-3 text-center leading-tight">
-                  DAIBO-G
-                </div>
-                <div className="mt-4 flex gap-2">
-                  <div className="w-5 h-5 rounded-full bg-green-400"></div>
-                  <div className="w-5 h-5 rounded-full bg-yellow-300"></div>
-                  <div className="w-5 h-5 rounded-full bg-lime-500"></div>
+                      <p className="text-[13px] md:text-[15px] font-medium text-[#333] leading-relaxed text-left">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              {/* CTA */}
+              <button className="mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-[#176b47] to-[#0f5132] text-white text-sm md:text-base font-bold shadow-xl hover:scale-105 transition duration-300">
+                Order Now
+              </button>
             </div>
+          </div>
+
+          {/* Right */}
+          <div className="flex justify-center relative">
+
+            {/* Glow */}
+            <div className="absolute w-[320px] h-[320px] bg-[#d4b06a]/30 blur-3xl rounded-full"></div>
+
+            <Image
+              src="/images/riyansh-diabo.webp"
+              alt="Riyansh Daibo-G Juice"
+              width={520}
+              height={820}
+              priority
+              className="relative z-10 object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.3)] hover:scale-105 transition duration-500"
+            />
           </div>
         </div>
       </div>
-      
-    </div>
+    </section>
   );
 }
